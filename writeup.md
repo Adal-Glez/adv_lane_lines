@@ -113,11 +113,7 @@ I implemented this step in `Finding Lanes` section in the function `cal_fill_lin
 
 Here's a Link to my video result
 
-[![Link to my video result](car.gif)](project_videoOut.mp4)
-
----
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/-dt5b_AQMr4" frameborder="0" allowfullscreen></iframe>
+[![Link to my video result](car.gif)](https://youtu.be/-dt5b_AQMr4)
 
 ---
 
