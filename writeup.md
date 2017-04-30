@@ -111,7 +111,13 @@ I implemented this step in `Finding Lanes` section in the function `cal_fill_lin
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
 
-Here's a  [![Link to my video result](car.gif)](project_videoOut.mp4)
+Here's a Link to my video result
+
+[![Link to my video result](car.gif)](project_videoOut.mp4)
+
+---
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-dt5b_AQMr4" frameborder="0" allowfullscreen></iframe>
 
 ---
 
