@@ -27,19 +27,9 @@ The goals / steps of this project are the following:
 [image9]: ./examples/result.png "Output"
 [video1]: ./project_video.mp4 "Video"
 
-## [Rubric](https://review.udacity.com/#!/rubrics/571/view) Points
-###Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
-
----
-### Writeup / README
-
-#### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.  [Here](https://github.com/udacity/CarND-Advanced-Lane-Lines/blob/master/writeup_template.md) is a template writeup for this project you can use as a guide and a starting point.  
-
-You're reading it, enjoy!
+### README
 
 ### Camera Calibration
-
-#### 1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
 The code for this step is contained in the 3rd block cell of the IPython notebook located in this repository of the file called `advanced-lane-lines.ipynb`.  
 
@@ -50,13 +40,12 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 
 ### Pipeline (single images)
 
-#### 1. Provide an example of a distortion-corrected image.
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
 ![alt text][image2]
 
 the output from camera camera calibration `objpoints` and `imgpoints` is applied here using `cv2.calibrateCamera()` function.  I applied this distortion correction to the test image using the `cv2.undistort()`.
 
-#### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
+#### Color transforms.
 
 I used a combination of color and gradient thresholds to generate a binary image (locate this at the `Threshold image` section of the file ).  Here's an example of my process for this step.  
 ![alt text][image3]
@@ -65,7 +54,7 @@ and Here's an example of my process result for this step.
 ![alt text][image4]
 
 
-#### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
+#### 3. Perspective transform.
 
 The code for my perspective transform includes a function called `cal_perspective()`, which appears in section `Perspective Transform ( birds-eye view)` of the file.  The `cal_perspective()` function takes as inputs an undistorted image.  
 
@@ -82,7 +71,7 @@ I verified that my perspective transform was working as expected by drawing the 
 
 ![alt text][image5]
 
-#### 4. Describe how you identified lane-line pixels and fit their positions with a polynomial?
+#### 4. Lane-line identification
 
 In the `Finding Lanes` section of the file I use a portion of the image to get an approximation fo the lanes position using a histogram approach
 
@@ -93,12 +82,12 @@ a 2nd order polynomial to get soemthing like this:
 
 ![alt text][image7]
 
-#### 5. Describe how  you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
+#### 5. Radius of curvature .
 
 based on [this amazing tutorial](http://www.intmath.com/applications-differentiation/8-radius-curvature.php)  I applied the next formuala found in `Finding Lanes` to calculate curvature and 
 ![alt text][image8]
 
-#### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
+#### 6. Result Example 
 
 I implemented this step in `Finding Lanes` section in the function `cal_fill_lines()`.  Here is an example of my result on a test image:
 
@@ -107,8 +96,6 @@ I implemented this step in `Finding Lanes` section in the function `cal_fill_lin
 ---
 
 ### Pipeline (video)
-
-#### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
 
 Here's a Link to my video result
@@ -119,8 +106,7 @@ Here's a Link to my video result
 
 ### Discussion
 
-#### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
-i have opportunities to improve deep dark road sections so i would like to explore L_channel combinations to improve that colection, i can also try a dynamic apporach on the length of the road since i have a fixed length and some roads have a tight curve and this apporach could need improvement
+I have opportunities to improve deep dark road sections so i would like to explore L_channel combinations to improve that colection, i can also try a dynamic apporach on the length of the road since i have a fixed length and some roads have a tight curve and this apporach could need improvement
 i could also include a validation section to verify consistency among lane detections, so anything outside limits could be verified or discarded
 also i think i could try to work on the performance by going object oriented instead of lineal/structured.
 
